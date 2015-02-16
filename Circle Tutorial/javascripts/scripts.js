@@ -16,23 +16,23 @@ function projectData(data){
 	var svg = d3.select('svg');
 
 	var circles = svg.selectAll("circle")
-											.data(data)
-											.enter()
-											.append('circle');
+							.data(data)
+							.enter()
+							.append('circle');
 
 // Update visualization with new data
 	var circlesAgain = svg.selectAll('circle') 
-													.data(data)
-													.style('opacity', function(){return '.5'})
-													.transition()
-													.duration(800)
-													.ease("bounce")
-														.attr('r', function(d){return d*10 + "px"})
-														.attr('cx', function(){return Math.random()*100 + "%"})
-														.attr('cy', function(){return Math.random()*100 + "%"})
-														.style('fill', function(){ return crayola.sample().hex})
+							.data(data)
+							.style('opacity', function(){return '.5'})
+							.transition()
+							.duration(800)
+							.ease("bounce")
+								.attr('r', function(d){return d*10 + "px"})
+								.attr('cx', function(){return Math.random()*100 + "%"})
+								.attr('cy', function(){return Math.random()*100 + "%"})
+								.style('fill', function(){ return crayola.sample().hex})
 
-														// .style('opacity', function(){return Math.random()})
+								// .style('opacity', function(){return Math.random()})
 
 	svg.selectAll('circle')
 	.data(data)
